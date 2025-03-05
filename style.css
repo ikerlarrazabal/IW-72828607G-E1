@@ -1,9 +1,24 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
+    background-color: #bbb;
     color: #333;
+    display: flex;
+    flex-direction: column;
 }
+
+body:not(.has-aside) main {
+    margin: 0;
+    padding: 20px;
+}
+
+
+.general-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
 
 
 h2,
@@ -56,15 +71,41 @@ header h1 {
 }
 
 /* Main */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+
 
 main {
-    flex-grow: 1;
+    flex: 1;
+    padding-left: 20px;
 }
+
+
+#asidebar {
+    flex: 0 0 250px;
+    margin-right: 20px;
+}
+
+#asidebar h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#asidebar ul {
+    padding: 0;
+}
+
+#asidebar ul li {
+    margin-bottom: 10px;
+}
+
+#asidebar ul li a {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+#asidebar ul li a:hover {
+    color: #0073e6;
+}
+
 
 /* Section */
 .principal-section {
@@ -79,38 +120,21 @@ main {
     margin-bottom: 10px;
 }
 
-.principal-section p {
+section p {
     font-size: 1.1rem;
     line-height: 1.6;
+    text-align: justify;
 }
 
 /* Listas */
-.principal-section ol {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.principal-section ol li {
-    margin-bottom: 15px;
-}
-
-.principal-section h4 {
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.principal-section p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
+.principal-section ol,
 .principal-section ul {
     margin-left: 20px;
     display: flex;
     flex-direction: column;
 }
 
+.principal-section ol li,
 .principal-section ul li {
     margin-bottom: 15px;
 }
@@ -120,20 +144,6 @@ main {
     margin-bottom: 5px;
 }
 
-/* Aside */
-.principal-aside {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.principal-aside h3 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
 
 /* Tablas */
 table {
@@ -159,7 +169,7 @@ th {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
     padding: 40px 0;
     text-align: center;
@@ -168,62 +178,78 @@ footer {
 .footer-container {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 20px;
 }
 
-.footer-info,
-.footer-links,
+.footer-info {
+    color: #b8afaf;
+    min-width: 250px;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-links {
+    min-width: 250px;
+    text-align: left;
+    padding: 10px;
+}
+
+
 .footer-media {
-    flex: 1;
+
+    min-width: 250px;
+    text-align: right;
+    padding: 10px;
 }
 
-
-
-footer li {
-    display: flex;
-    justify-content: space-around;
+.footer-info h3,
+.footer-links h3,
+.footer-media h3 {
+    color: #bbb;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
-.footer-info p,
+
+.footer-info ul,
 .footer-links ul,
 .footer-media ul {
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
+    list-style: none;
+    padding: 0;
 }
 
-.footer-links ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+.footer-info li,
+.footer-links li,
+.footer-media li {
+    margin-bottom: 8px;
 }
 
-.footer-media ul {
-    display: flex;
-    gap: 10px;
-}
-
-.footer-links a,
-.footer-media a {
-    color: #fff;
+.footer-links a {
+    color: #00d4ff;
+    /* Azul claro */
     text-decoration: none;
-    font-size: 1.1rem;
 }
 
-.footer-links a:hover,
+.footer-links a:hover {
+    color: #ffcc00;
+    /* Amarillo */
+}
+
+.footer-media a {
+    color: #ff5733;
+    /* Naranja */
+    text-decoration: none;
+}
+
 .footer-media a:hover {
-    text-decoration: underline;
+    color: #33ff57;
+    /* Verde */
 }
 
 .footer-bottom {
-    background-color: #222;
-    padding: 10px 0;
-    color: #aaa;
+    background-color: #111;
+    padding: 15px 0;
     font-size: 0.9rem;
-}
-
-.footer-bottom p {
-    margin: 0;
+    color: #bbb;
 }
