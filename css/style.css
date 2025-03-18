@@ -12,6 +12,7 @@ body {
 
 .general-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     padding: 20px;
@@ -81,23 +82,23 @@ header h1 {
 
 /* Main */
 main {
-    flex: 1;
+    flex: 2;
     padding: 20px;
 }
 
 /* Aside Generico */
 #asidebar-lista,
 #right-side {
+    display: flex;
+    flex: 1;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    height: 95%;
 }
 
 /* Aside Izquierda */
 #asidebar-lista {
     display: flex;
     flex-direction: column;
-    width: 20%;
 }
 
 
@@ -127,9 +128,9 @@ main {
     justify-content: space-between;
     align-items: center;
     width: 25%;
+    height: 100%;
 
 }
-
 
 .aside-img {
     width: 90%;
@@ -142,12 +143,15 @@ main {
 
 /* Sections dentro Main */
 .imagen-lateral {
-    padding: 10px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.principal-section
-{
+.principal-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -155,16 +159,14 @@ main {
     margin-top: 10px;
     margin-bottom: 20px;
     padding-top: 5px;
-    padding-right: 70px;
     padding-bottom: 25px;
-    padding-left: 70px;
 }
 
 
 /* Listas */
 .principal-section ol,
 .principal-section ul {
-    margin-left: 20px;
+    margin-left: 5px;
     display: flex;
     flex-direction: column;
 }
@@ -182,7 +184,8 @@ main {
 
 /* Tablas */
 table {
-    width: 100%;
+    width: 80%;
+    max-width: 900px;
     margin-top: 10px;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
@@ -367,3 +370,28 @@ input[type="submit"]:hover {
 }
 
 /* Diseño responsive */
+
+@media (max-width: 1092px) {
+    .general-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    aside {
+        width: 325px;
+        margin-right: 0;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+}
