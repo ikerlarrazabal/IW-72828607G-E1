@@ -9,18 +9,18 @@ body {
 }
 
 
-
+/* Container General */
 .general-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    width: 90%;
+    max-width: 1700px;
     padding: 20px;
-    height: auto;
 }
 
 
-
+/* Subtitulos */
 h2,
 h3,
 h4 {
@@ -47,44 +47,64 @@ header h1 {
 
 /* Barra del Navegador */
 #principal-nav {
-    margin: 20px;
     width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-top: 2px solid #ccc;
 }
 
 #principal-nav ul {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    list-style: none;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #principal-nav li {
-    display: flex;
+    flex: 1;
     text-align: center;
-    text-align: center;
-    margin: 0 10px;
+
 }
 
 #principal-nav .nav-link {
+    display: block;
+    padding: 12px 20px;
+    font-size: 16px;
     color: #fff;
-    font-size: 18px;
-    padding: 10px 20px;
-    background-color: #333;
+    text-decoration: none;
+    background-color: #757678;
     border-radius: 5px;
-    display: inline-block;
-    width: 100%;
 }
 
 #principal-nav .nav-link:hover {
-    background-color: #555;
+    background-color: #fbfdff;
+    color: #000000;
 }
 
-/* Main */
+
+/* Main Principal */
 main {
     flex: 2;
     padding: 20px;
+    max-width: 70%;
+    min-width: 400px;
 }
+
+
+/* Main Proyectos y Clientes */
+#main {
+    flex: 3;
+    padding: 20px;
+    max-width: 70%;
+    min-width: 400px;
+}
+
 
 /* Aside Generico */
 #asidebar-lista,
@@ -92,13 +112,13 @@ main {
     display: flex;
     flex: 1;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Aside Izquierda */
 #asidebar-lista {
     display: flex;
     flex-direction: column;
+    max-width: 350px;
 }
 
 
@@ -122,35 +142,40 @@ main {
 
 
 /* Aside Derecha */
+#right-side-principal,
 #right-side {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    width: 25%;
-    height: 100%;
-
+    justify-content: flex-start;
+    padding: 20px;
+    max-width: 350px;
+    min-width: 300px;
+    height: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+
+/* Imagen aside */
 .aside-img {
-    width: 90%;
-    max-width: 220px;
-    height: auto;
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
     border-radius: 10px;
-    margin-bottom: 25px;
+}
+
+
+/* Imagen aside pagina Principal */
+.aside-img-principal {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 
 
 /* Sections dentro Main */
-.imagen-lateral {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 .principal-section {
     display: flex;
     flex-direction: column;
@@ -161,6 +186,8 @@ main {
     padding-top: 5px;
     padding-bottom: 25px;
 }
+
+
 
 
 /* Listas */
@@ -302,17 +329,29 @@ footer {
 }
 
 /* Formulario */
-/* Estilos básicos del formulario */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
 form {
-    background-color: #f5f5f5;
+    color: #fff;
+    background-color: #6b6b68;
     padding: 20px;
     border-radius: 8px;
     width: 100%;
-    max-width: 600px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 5px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+}
+
+#mainform {
+    display: flex;
+    width: 1000px;
+    max-width: 100%;
 }
 
 /* Estilos para fieldset y legend */
@@ -334,7 +373,7 @@ label {
     margin-bottom: 5px;
 }
 
-/* Estilos para inputs, select y textarea */
+/* Estilos para Campos de Inserción */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -349,13 +388,12 @@ textarea {
     box-sizing: border-box;
 }
 
-/* Estilos específicos para radio y checkbox */
+/* Estilos Botones */
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 5px;
 }
 
-/* Estilos para el botón de envío */
 input[type="submit"] {
     background-color: #0073e6;
     color: white;
@@ -371,27 +409,303 @@ input[type="submit"]:hover {
 
 /* Diseño responsive */
 
-@media (max-width: 1092px) {
+@media (max-width: 1100px) {
+
+    /* General */
     .general-container {
         flex-direction: column;
         align-items: center;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
-    aside {
-        width: 325px;
-        margin-right: 0;
+    /* Asides */
+    #asidebar-lista,
+    #right-side,
+    #right-side-principal {
+        display: flex;
+        flex: 1;
+        padding: 20px;
+        max-width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Mains */
+    #main {
+        flex: 3;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
     }
 
     main {
+        flex: 2;
         width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
     }
 
-    nav ul {
-        display: flex;
+    /* Header */
+    header {
+        padding: 15px;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 28px;
+        margin: 0;
+    }
+
+    /* Nav */
+    #principal-nav ul {
         flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
     }
 
-    nav ul li {
+    #principal-nav li {
         margin: 5px 0;
+    }
+
+    #principal-nav .nav-link {
+        width: auto;
+        padding: 5px 10px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-media {
+        text-align: center;
+        margin-bottom: 15px;
+        flex: none;
+        min-width: 100%;
+    }
+
+    /* Tablas */
+    table {
+        width: 100%;
+        max-width: none;
+        margin-top: 10px;
+    }
+
+    th,
+    td {
+        padding: 8px;
+    }
+
+    /* Formulario */
+    form {
+        max-width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #0073e6;
+        color: white;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #005bb5;
+    }
+
+    #mainform {
+        display: flex;
+        width: 100%;
+        max-width: 450px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 15px;
+    }
+}
+
+
+
+
+/* Responsive pequeño */
+@media (max-width: 900px) {
+
+    /* General */
+    body {
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .general-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Header */
+    header h1 {
+        font-size: 26px;
+        margin: 0;
+        text-align: center;
+    }
+
+    /* Navegación */
+    #principal-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    #principal-nav li {
+        margin: 10px 0;
+    }
+
+    #principal-nav .nav-link {
+        padding: 8px 16px;
+        font-size: 16px;
+    }
+
+    /* Mains */
+
+    #main {
+        flex: 3;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    main {
+        flex: 2;
+        width: 100%;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Formulario */
+    form {
+        width: 100%;
+        max-width: 800px;
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        padding: 14px;
+        background-color: #0073e6;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #005bb5;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-media {
+        margin-bottom: 20px;
+        flex: none;
+        min-width: 100%;
+    }
+
+    .footer-links ul,
+    .footer-info ul,
+    .footer-media ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-links a,
+    .footer-info p,
+    .footer-media a {
+        font-size: 14px;
+        color: #0073e6;
+        text-decoration: none;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    /*Tablas */
+    table {
+        width: 80%;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 14px;
     }
 }
