@@ -6,19 +6,34 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 
 /* Container General */
+.general-container-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 90%;
+    max-width: 1700px;
+    height: max-content;
+    padding: 20px;
+    margin: 5px;
+}
+
 .general-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch;
     width: 90%;
     max-width: 1700px;
+    height: max-content;
     padding: 20px;
+    margin: 5px;
 }
-
 
 /* Subtitulos */
 h2,
@@ -92,17 +107,27 @@ header h1 {
 main {
     flex: 2;
     padding: 20px;
+    margin: 5px;
     max-width: 70%;
     min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
 }
 
 
 /* Main Proyectos y Clientes */
 #main {
     flex: 3;
-    padding: 20px;
+    padding: 50px;
     max-width: 70%;
     min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 
@@ -150,10 +175,10 @@ main {
     align-items: center;
     justify-content: flex-start;
     padding: 20px;
+    margin: 5px;
     max-width: 350px;
     min-width: 300px;
-    height: auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 
@@ -179,6 +204,7 @@ main {
 .principal-section {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: flex-start;
     text-align: justify;
     margin-top: 10px;
@@ -672,29 +698,9 @@ input[type="submit"]:hover {
     .footer-links,
     .footer-media {
         margin-bottom: 20px;
-        flex: none;
         min-width: 100%;
     }
 
-    .footer-links ul,
-    .footer-info ul,
-    .footer-media ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-links a,
-    .footer-info p,
-    .footer-media a {
-        font-size: 14px;
-        color: #0073e6;
-        text-decoration: none;
-    }
-
-    .footer-bottom p {
-        font-size: 12px;
-        margin-top: 10px;
-    }
 
     /*Tablas */
     table {
